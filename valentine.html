@@ -10,45 +10,70 @@
         font-family: Arial, sans-serif;
     }
 
-    .heart {
-        width: 500px;
-        height: 450px;
-        margin: 50px auto;
-        position: relative;
-        clip-path: path("M 250 470 L 20 200 A 150 150 0 1 1 250 150 A 150 150 0 1 1 480 200 Z");
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-    }
+.heart {
+    width: 95vw;
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between rows */
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
 
-    .heart img {
-        width: 33.33%;
-        height: 33.33%;
-        object-fit: cover;
-    }
+.heart img {
+    width: 100px; /* Adjust size if they are too big/small */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-    .text {
-        margin-top: 30px;
-        font-size: 35px;
-        color: red;
-        font-weight: bold;
-    }
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Normal gap for most rows */
+}
+
+/* This is the magic part for the top row */
+.top-row {
+    display: flex;
+    justify-content: center;
+    gap: 120px; /* A wider gap to push the top 2 images over the centers of the 4 below */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 </style>
 </head>
 
 <body>
 
-    <div class="heart">
-        <img src="images/pic1.jpg">
-        <img src="images/pic2.jpg">
-        <img src="images/pic3.jpg">
-        <img src="images/pic4.jpg">
-        <img src="images/pic5.jpg">
-        <img src="images/pic6.jpg">
-        <img src="images/pic7.jpg">
-        <img src="images/pic8.jpg">
-        <img src="images/pic9.jpg">
+<div class="heart">
+    <div class="top-row">
+        <img src="pic1.jpg">
+        <img src="pic2.jpg">
     </div>
+
+    <div class="row">
+        <img src="pic3.jpg">
+        <img src="pic4.jpg">
+        <img src="pic5.jpg">
+        <img src="pic6.jpg">
+    </div>
+
+    <div class="row">
+        <img src="pic7.jpg">
+        <img src="pic8.jpg">
+        <img src="pic9.jpg">
+    </div>
+
+    <div class="row">
+        <img src="pic10.jpg">
+    </div>
+</div>
 
     <div class="text">I LOVE U 4EVER ACHUUU ❤️</div>
 
